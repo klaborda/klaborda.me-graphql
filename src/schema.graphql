@@ -4,7 +4,7 @@ type Query {
 }
 
 type Mutation {
-  post(title: String!, description: String!): Post!
+  post(title: String!, body: String!): Post!
 }
 
 type Post {

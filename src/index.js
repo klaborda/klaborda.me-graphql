@@ -12,7 +12,7 @@ const resolvers = {
   },
   Mutation: {
     post: (parent, args, context, info) => {
-      const newPost = context.prisma.link.create({
+      const newPost = context.prisma.post.create({
         data: {
           title: args.title,
           body: args.body,
