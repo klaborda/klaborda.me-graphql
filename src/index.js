@@ -1,27 +1,18 @@
 const { ApolloServer } = require("apollo-server");
 const { PrismaClient } = require("@prisma/client");
 const { getUserId } = require("./utils");
+const Query = require("./resolvers/Query");
+const Mutation = require("./resolvers/Mutation");
+const User = require("./resolvers/User");
+const Post = require("./resolvers/Post");
 const fs = require("fs");
 const path = require("path");
 
 const resolvers = {
-  Query: {
-    info: () => `This is the klaborda.me API`,
-    posts: async (parent, args, context) => {
-      return context.prisma.post.findMany();
-    },
-  },
-  Mutation: {
-    post: (parent, args, context, info) => {
-      const newPost = context.prisma.post.create({
-        data: {
-          title: args.title,
-          body: args.body,
-        },
-      });
-      return newPost;
-    },
-  },
+  Query,
+  Mutation,
+  User,
+  Link,
 };
 
 const prisma = new PrismaClient();
