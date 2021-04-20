@@ -5,6 +5,8 @@ type Query {
 
 type Mutation {
   post(title: String!, body: String!): Post!
+  signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
 }
 
 type Post {
@@ -12,4 +14,16 @@ type Post {
   createdAt: String!
   title: String!
   body: String!
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  links: [Link!]!
 }
