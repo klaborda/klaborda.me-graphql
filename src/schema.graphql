@@ -1,6 +1,6 @@
 type Query {
   info: String!
-  posts: [Post!]!
+  feed: [Post!]!
 }
 
 type Mutation {
