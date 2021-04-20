@@ -12,7 +12,7 @@ const resolvers = {
   Query,
   Mutation,
   User,
-  Link,
+  Post,
 };
 
 const prisma = new PrismaClient();

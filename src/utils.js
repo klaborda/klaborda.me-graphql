@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
+const process = require("process");
 // default to the env variable secret
-const APP_SECRET = process.env("APP_SECRET") || "sup3rs3cr3t";
+const APP_SECRET = process.env.APP_SECRET || "sup3rs3cr3t";
 
 function getTokenPayload(token) {
   return jwt.verify(token, APP_SECRET);
