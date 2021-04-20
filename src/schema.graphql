@@ -14,6 +14,7 @@ type Post {
   createdAt: String!
   title: String!
   body: String!
+  author: User
 }
 
 type AuthPayload {
