@@ -16,7 +16,7 @@ type Mutation {
 
 type Post {
   id: ID!
-  createdAt: String!
+  createdAt: DateTime!
   title: String!
   body: String!
   author: User
@@ -44,3 +44,5 @@ type User {
   email: String!
   posts: [Post!]!
 }
+
+scalar DateTime
