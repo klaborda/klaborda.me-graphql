@@ -1,6 +1,11 @@
 type Query {
   info: String!
-  feed(filter: String, skip: Int, take: Int): [Post!]!
+  feed(
+    filter: String
+    skip: Int
+    take: Int
+    orderBy: PostOrderByInput
+  ): [Post!]!
 }
 
 type Mutation {
@@ -15,6 +20,17 @@ type Post {
   title: String!
   body: String!
   author: User
+}
+
+input PostOrderByInput {
+  title: Sort
+  body: Sort
+  createdAt: Sort
+}
+
+enum Sort {
+  asc
+  desc
 }
 
 type AuthPayload {
