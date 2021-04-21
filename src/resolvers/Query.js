@@ -10,6 +10,8 @@ function feed(parent, args, context, info) {
 
   const posts = context.prisma.post.findMany({
     where,
+    skip: args.skip,
+    take: args.take,
   });
   return posts;
 }
